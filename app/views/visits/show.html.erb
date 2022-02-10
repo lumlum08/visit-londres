@@ -1,1 +1,29 @@
-<h1>See one visit</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "banner.jpg" %>')">
+  <div class="container">
+    <h1 style="text-align: center"><%= @visit.name %></h1>
+  </div>
+</div>
+
+
+
+
+<div class="card-details">
+  <%= image_tag "banner1.jpg", :class => "card-details-img" %>
+
+  <div class="card-details-infos">
+    <div>
+      <h2><%= @visit.description %> </h2>
+      <p>Localisation: <%= @visit.location %> </p>
+      <p>Date: <%= @visit.date %> </p>
+      <p>Heure: <%= @visit.heure %> h </p>
+    </div>
+    <div>
+      <%= image_tag('logo.jpg', class: "card-details-avatar avatar-bordered") %>
+      <p>Prix: <%= @visit.price %> € par personne </p>
+    </div>
+  </div>
+</div>
+
+<div class="card-details" style="text-align: center">
+    <%= link_to 'Back to the List',  visits_path(@visits), class: 'btn btn-danger my-1'%>
+  </div>

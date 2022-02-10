@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path "banner.jpg" %>')">
+  <div class="container">
+    <h1>Voyage du <strong>14 février 2022</strong> au <strong>18 février 2022</strong>!</h1>
+    <p>Visite de Londres avec Marco, Nana et Geo</p>
+    <%= link_to 'Mes visites', visits_path, class:'btn btn-warning'%>
+  </div>
+</div>
+
+
+<div class="container my-2" style="text-align: center">
+<h1>Agenda des visites</h1>
+
+<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=7&bgcolor=%23ffffff&ctz=Europe%2FParis&showNav=1&showDate=1&showPrint=0&showTz=0&mode=WEEK&src=aHMxNzg4dG51c2owM29ndGY5Z3U5MG9maDRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%238E24AA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+<p></p>
+</div>
