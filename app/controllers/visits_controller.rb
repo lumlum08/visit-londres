@@ -11,6 +11,15 @@ class VisitsController < ApplicationController
   end
 
   def show
+
+    @markers = Visit.geocoded.map do |visit|
+      {
+        lat: visit.latitude,
+        lng: visit.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { visit: visit }),
+        image_url: helpers.asset_url("nana.jpg")
+      }
+    end
   end
 
   def edit
