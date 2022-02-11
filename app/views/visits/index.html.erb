@@ -4,7 +4,7 @@
 </div>
 
 <div class="container d-flex justify-content-between">
-  <div>
+
     <% @visits.each do |visit| %>
       <div>
         <%= link_to visit.name,  visit_path(visit), class: 'btn btn-ghost my-1'%>
@@ -15,6 +15,7 @@
     <% end %>
   </div>
 </div>
+
 
 <div class="container my-2">
   <%= link_to "Add a new visit",  new_visit_path(@visit), class: 'btn btn-warning my-1'%>
