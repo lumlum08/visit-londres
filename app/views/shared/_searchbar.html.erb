@@ -1,0 +1,9 @@
+<div class="search d-flex">
+  <%= simple_form_for :search, url: visits_path, method: :get do |f| %>
+      <%= f.input :category, collection:Visit::CATEGORIES, as: :select, :include_blank => "Select the category", label: false%>
+      <button name="button" type="submit" class="btn btn-danger">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  <% end %>
+</div>
