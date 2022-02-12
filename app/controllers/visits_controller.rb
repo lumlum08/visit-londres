@@ -8,7 +8,7 @@ class VisitsController < ApplicationController
 
   def index
      if params[:search].present?
-      @visits = Visit.search_by_category(params[:search])
+      @visits = Visit.search_by_category(params[:search][:category])
     else
       @visits = Visit.all
     end
