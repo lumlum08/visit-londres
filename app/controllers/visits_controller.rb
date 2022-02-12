@@ -8,19 +8,18 @@ class VisitsController < ApplicationController
 
   def index
      if params[:search].present?
-      @visits = Visit.search_by_category(params[:search])
+      @visits = Visit.search_by_category(params[:search][:category])
     else
       @visits = Visit.all
     end
   end
 
   def show
-
     @markers = Visit.geocoded.map do |visit|
       {
-        lat: visit.latitude,
-        lng: visit.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { visit: visit }),
+        lat: @visit.latitude,
+        lng: @visit.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { visit: @visit }),
         image_url: helpers.asset_url("nana.jpg")
       }
     end
