@@ -15,7 +15,6 @@ class VisitsController < ApplicationController
   end
 
   def show
-
     @markers = Visit.geocoded.map do |visit|
       {
         lat: visit.latitude,
