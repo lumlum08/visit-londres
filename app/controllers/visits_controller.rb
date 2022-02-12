@@ -48,7 +48,7 @@ class VisitsController < ApplicationController
 
   def destroy
     @visit.destroy
-    redirect_to profil_path
+    redirect_to visits_path
   end
 
 
